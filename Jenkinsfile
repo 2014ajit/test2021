@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Docker Build') { 
             steps { 
-                sh 'docker build -t akmp121212/my-web-app:1.0.0 .'
+                echo "Workspce : ${env.WORKSPACE}"
             }
         }
         stage('Test'){
             steps {
-               echo "test"
+              sh 'docker --version' 
                 }
         }
         stage('Deploy') {
