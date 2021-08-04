@@ -2,7 +2,9 @@ pipeline {
     agent any 
     stages {
         stage('Docker Build') { 
+                steps {
                 sh 'docker build -t akmp121212/myapp1 .'
+                }
         }
         stage('Test'){
             steps {
