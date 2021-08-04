@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Docker Build') { 
                 steps {
-                sh 'docker build -t akmp121212/myapp1 .'
+                sh 'docker build -t akmp121212/myapp2 .'
                 }
         }
         stage('Test'){
