@@ -10,7 +10,7 @@ pipeline {
             steps {
                     script {
                         withCredentials([usernamePassword(credentialsId: mydockerkey1, passwordVariable: 'MYDOCKERP', usernameVariable: 'MYDOCKERU')]) {
-                            sh "docker login -u ${MYDOCKERU} -p $ {MYDOCKERP}
+                            sh "docker login -u ${MYDOCKERU} -p ${MYDOCKERP}
                             sh 'docker push akmp121212/myapp1'
                         }           
                     }
