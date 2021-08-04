@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Docker Build') { 
                 steps {
-                sh 'docker build -t akmp121212/myapp2 .'
+                sh 'docker build -t akmp121212/myapp3 .'
                 }
         }
         stage('Docker Publish'){
@@ -11,14 +11,14 @@ pipeline {
                     script {
                        withCredentials([string(credentialsId: 'dockerpwd', variable: 'DockerHUB')]) {
                            sh "docker login -u akmp121212 -p ${DockerHUB}"
-                            sh 'docker push akmp121212/myapp2'
+                            sh 'docker push akmp121212/myapp3'
                         }           
                     }
                 }
              }
         stage('Deploy') {
             steps {
-               sh 'docker run -it -d --name=web5 -p 80:80 akmp121212/myapp2'
+               sh 'docker run -it -d --name=web5 -p 80:80 akmp121212/myapp3'
             }
         }
     }
