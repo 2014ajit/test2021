@@ -4,6 +4,7 @@ pipeline {
         stage('Docker Build') { 
             steps { 
                 echo "Workspce : ${env.WORKSPACE}"
+                sh 'docker build -t akmp121212/myapp1 .'
             }
         }
         stage('Test'){
