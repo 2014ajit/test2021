@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               echo "test"
+               sh 'docker run -it -d --name=web5 -p 80:80 akmp121212/myapp2'
             }
         }
     }
